@@ -13,6 +13,7 @@ In the repository's **Settings → Pages**, select the deployment branch and `/ 
 ## Brand and image notes
 
 - The palette is sampled from the company's published logo mark: navy `#223669` and gold `#E6AC26`; the source mark itself is retained in `assets/logo/new-look-mark.png` and paired with the verified company name as accessible text.
+- Inter is bundled locally in `assets/fonts/` (with its OFL license) to prevent device-specific font fallback and icon-like glyph rendering. The system sans-serif stack is only a fallback.
 - `assets/images/hero-clean-interior.jpg` is a custom-generated conceptual cleaning-industry visual, not a photograph of a New Look project, employee, or customer.
 - Service and gallery photographs are original images embedded on New Look's existing website and are loaded from its image CDN. Their source URLs are retained in `index.html`.
 - Business facts and contact details are drawn from the existing site. No testimonials or unsupported claims have been added. The original contact page's form reported invalid form properties, so the main contact actions use the published phone and email instead.

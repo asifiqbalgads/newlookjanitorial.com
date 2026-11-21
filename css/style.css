@@ -1,4 +1,32 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "New Look Inter";
+  src: url("../assets/fonts/inter-latin-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "New Look Inter";
+  src: url("../assets/fonts/inter-latin-500.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "New Look Inter";
+  src: url("../assets/fonts/inter-latin-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "New Look Inter";
+  src: url("../assets/fonts/inter-latin-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
 :root {
   --navy: #223669;
   --navy-deep: #17284f;
@@ -10,7 +38,7 @@
   --muted: #6a7180;
   --line: #deded9;
   --serif: Georgia, "Times New Roman", serif;
-  --sans: Inter, "Aptos", "Segoe UI", Arial, sans-serif;
+  --sans: "New Look Inter", Arial, Helvetica, sans-serif;
   --page: 1220px;
 }
 * { box-sizing: border-box; }
@@ -37,7 +65,7 @@ button { font: inherit; }
 .nav-cta:hover,.button-dark:hover { background: var(--navy-deep); transform: translateY(-2px); }
 .nav-cta svg,.button svg { width: 17px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .menu-toggle { display: none; }
-.hero { position: relative; display: grid; grid-template-columns: minmax(430px, .89fr) minmax(480px, 1.11fr); min-height: 620px; max-width: 1600px; margin: auto; padding: 55px max(44px, calc((100% - 1340px)/2)) 60px; overflow: hidden; align-items: center; }
+.hero { position: relative; display: grid; grid-template-columns: minmax(430px, .89fr) minmax(480px, 1.11fr); min-height: 620px; width: 100%; max-width: 1440px; margin: auto; padding: 55px clamp(28px, 5.5vw, 76px) 60px; overflow: hidden; align-items: center; }
 .hero-copy { position: relative; z-index: 2; max-width: 590px; padding: 0 30px 29px 0; }
 .eyebrow { display: flex; gap: 12px; align-items: center; margin: 0 0 28px; color: #586276; font-size: 10px; line-height: 1.5; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .eyebrow-rule { width: 26px; height: 2px; display: inline-block; flex: 0 0 auto; background: var(--gold); }
@@ -56,12 +84,12 @@ button { font: inherit; }
 .hero-photo { position: relative; width: 100%; height: 100%; object-fit: cover; object-position: 60% center; }
 .photo-caption { position: absolute; bottom: 0; left: 0; display: flex; align-items: center; gap: 9px; padding: 13px 17px; background: var(--paper); color: var(--navy); font-size: 10px; font-weight: 700; letter-spacing: .04em; }
 .caption-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
-.hero-stamp { position: absolute; bottom: 24px; right: -32px; width: 135px; height: 135px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; background: var(--navy); border: 5px solid var(--paper); border-radius: 50%; line-height: 1.32; transform: rotate(7deg); }
+.hero-stamp { position: absolute; bottom: 24px; right: 14px; width: 135px; height: 135px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; background: var(--navy); border: 5px solid var(--paper); border-radius: 50%; line-height: 1.32; transform: rotate(7deg); }
 .hero-stamp span { font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
 .hero-stamp strong { margin: 5px 0; font-family: var(--serif); font-size: 20px; font-weight: 400; line-height: 1.04; }
 .hero-index { position: absolute; bottom: 48px; left: 50%; color: #8a8e99; font-size: 9px; letter-spacing: .14em; }
 .trust-band { background: var(--navy); color: white; }
-.trust-inner { max-width: 1340px; min-height: 145px; margin: auto; padding: 26px 0; display: grid; grid-template-columns: 1.5fr 1fr 1.25fr 1.15fr; align-items: center; }
+.trust-inner { width: min(1220px, calc(100% - 88px)); min-height: 145px; margin: auto; padding: 26px 0; display: grid; grid-template-columns: 1.5fr 1fr 1.25fr 1.15fr; align-items: center; }
 .trust-lead { color: var(--gold-soft); font-family: var(--serif); font-size: 21px; font-style: italic; line-height: 1.25; }
 .trust-item { display: flex; align-items: center; gap: 14px; min-height: 54px; padding-left: 30px; border-left: 1px solid rgba(255,255,255,.24); color: rgba(255,255,255,.87); font-size: 11px; line-height: 1.5; }
 .trust-icon { display: grid; width: 39px; height: 39px; flex: 0 0 39px; place-items: center; color: var(--gold-soft); border: 1px solid rgba(244,201,87,.5); border-radius: 50%; }
@@ -157,15 +185,21 @@ button { font: inherit; }
 }
 @media (max-width: 1100px) {
   .section-wrap,.header-inner { width: calc(100% - 56px); }
-  .hero { grid-template-columns: minmax(360px,.92fr) minmax(380px,1.08fr); min-height: 575px; padding: 45px 28px 55px; }
+  .hero { grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr); min-height: 575px; padding: 45px 28px 55px; }
   .hero h1 { font-size: clamp(57px,7vw,76px); }
   .hero-visual { height: 435px; }
-  .hero-stamp { right: -18px; width: 115px; height: 115px; }
+  .hero-stamp { right: 10px; width: 115px; height: 115px; }
   .trust-inner { width: calc(100% - 56px); grid-template-columns: 1.1fr 1fr 1.3fr 1.1fr; }
   .trust-item { padding-left: 17px; gap: 10px; }
   .service-image { height: 190px; }
   .area-inner { grid-template-columns: 75px 1.05fr .82fr; gap: 27px; }
   .footer-main { grid-template-columns: 1.1fr 1fr 1.1fr .6fr; gap: 20px; }
+}
+@media (max-width: 900px) {
+  .hero h1 { font-size: clamp(48px, 6.2vw, 57px); }
+  .trust-inner { grid-template-columns: 1fr 1fr; gap: 16px 12px; }
+  .trust-lead { grid-column: 1 / -1; }
+  .trust-item { padding-left: 0; border-left: 0; }
 }
 @media (max-width: 760px) {
   html { scroll-padding-top: 74px; }
@@ -196,7 +230,7 @@ button { font: inherit; }
   .hero-visual { height: clamp(280px,74vw,425px); margin: 0 10px 0 0; }
   .hero-visual::before { top: -12px; right: -12px; }
   .hero-photo { object-position: 62% center; }
-  .hero-stamp { right: -16px; bottom: 17px; width: 100px; height: 100px; border-width: 4px; }
+  .hero-stamp { right: 5px; bottom: 17px; width: 100px; height: 100px; border-width: 4px; }
   .hero-stamp strong { font-size: 16px; }
   .hero-stamp span { font-size: 7px; }
   .photo-caption { padding: 10px 12px; font-size: 9px; }
