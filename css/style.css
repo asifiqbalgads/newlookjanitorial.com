@@ -1,32 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "New Look Inter";
-  src: url("../assets/fonts/inter-latin-400.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "New Look Inter";
-  src: url("../assets/fonts/inter-latin-500.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
-  font-family: "New Look Inter";
-  src: url("../assets/fonts/inter-latin-600.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
-@font-face {
-  font-family: "New Look Inter";
-  src: url("../assets/fonts/inter-latin-700.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
 :root {
   --navy: #223669;
   --navy-deep: #17284f;
@@ -38,7 +10,7 @@
   --muted: #6a7180;
   --line: #deded9;
   --serif: Georgia, "Times New Roman", serif;
-  --sans: "New Look Inter", Arial, Helvetica, sans-serif;
+  --sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
   --page: 1220px;
 }
 * { box-sizing: border-box; }
